@@ -22,13 +22,15 @@ To deploy the cluster you can use :
 #### Usage
 
     # Install dependencies from ``requirements.txt``
-    sudo pip install -r requirements.txt
+    sudo pip3 install -r requirements.txt
+
+    pip3  install -r contrib/inventory_builder/requirements.txt
 
     # Copy ``inventory/sample`` as ``inventory/mycluster``
     cp -rfp inventory/sample inventory/mycluster
 
     # Update Ansible inventory file with inventory builder
-    declare -a IPS=(10.10.1.3 10.10.1.4 10.10.1.5)
+    declare -a IPS=(10.0.2.15)
     CONFIG_FILE=inventory/mycluster/hosts.yml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 
     # Review and change parameters under ``inventory/mycluster/group_vars``
